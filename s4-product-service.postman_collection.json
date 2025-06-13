@@ -1,0 +1,81 @@
+{
+	"info": {
+		"_postman_id": "8886d3bb-75e6-492e-adc8-8859e3342b98",
+		"name": "s4-product-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5093744"
+	},
+	"item": [
+		{
+			"name": "products",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzZWJhIiwiaWF0IjoxNzQ5NDMxNjA1LCJleHAiOjE3NDk1MTgwMDV9.pPLZrx3njDJhaAWqmoVjZoFQb9e-V_zJj0wyDjqkIds",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/v1/product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjUsInN1YiI6InNlYmEiLCJpYXQiOjE3NDk0MzYzNDcsImV4cCI6MTc0OTUyMjc0N30.FR2iJ6C_j0xMeQf5eTQ1wC5eqcZDYhMdcHqpzT-1-SE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Notebook\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/v1/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"products"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

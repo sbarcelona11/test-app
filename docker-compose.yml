@@ -1,0 +1,28 @@
+services:
+  db_postgres:
+    container_name: db_postgres
+    image: postgres:15
+    environment:
+      POSTGRES_DB: products
+      POSTGRES_USER: authuser
+      POSTGRES_PASSWORD: authpass
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db:/var/lib/postgresql/data
+
+  product-service:
+    container_name: product_service
+    build: .
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db_postgres:5432/products
+      SPRING_DATASOURCE_USERNAME: authuser
+      SPRING_DATASOURCE_PASSWORD: authpass
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      JWT_SECRET: 9f8bHj2kLmN0pQ5rT7sUvWxYzAbCdEfG
+    env_file:
+      - .env
+    depends_on:
+      - db_postgres
+    ports:
+      - "8081:8081"
