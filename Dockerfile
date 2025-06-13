@@ -22,12 +22,12 @@ RUN mvn clean package -DskipTests
 FROM openjdk:21-slim
 
 # Variables de entorno opcionales por defecto (Render las puede sobreescribir)
-ENV SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5432/products
-ENV SPRING_DATASOURCE_USERNAME=authuser
-ENV SPRING_DATASOURCE_PASSWORD=authpass
-ENV SPRING_JPA_HIBERNATE_DDL_AUTO=update
-ENV SPRING_JPA_SHOW_SQL=true
-ENV JWT_SECRET=111111222333334r444
+#ENV SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5432/products
+#ENV SPRING_DATASOURCE_USERNAME=authuser
+#ENV SPRING_DATASOURCE_PASSWORD=authpass
+#ENV SPRING_JPA_HIBERNATE_DDL_AUTO=update
+#ENV SPRING_JPA_SHOW_SQL=true
+#ENV JWT_SECRET=111111222333334r444
 
 # Crea un directorio de trabajo en el contenedor
 WORKDIR /app
