@@ -51,11 +51,11 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
         // Permitir Swagger en producción y frontend local
-        configuration.setAllowedOrigins(List.of(
-                "https://test-app-production-4e3d.up.railway.app",
-                "http://localhost:8080"
-        ));
-//        configuration.setAllowedOrigins(List.of("*")); // Cambia "*" por dominios específicos si querés restringir
+//        configuration.setAllowedOrigins(List.of(
+//                "https://test-app-production-4e3d.up.railway.app",
+//                "http://localhost:8080"
+//        ));
+        configuration.setAllowedOrigins(List.of("*")); // Cambia "*" por dominios específicos si querés restringir
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(List.of("*")); // O especificá: "Authorization", "Content-Type", etc.
         configuration.setAllowCredentials(true); // solo si necesitás cookies/autenticación cruzada
